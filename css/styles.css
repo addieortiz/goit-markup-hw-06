@@ -9,6 +9,7 @@
   --green: #31d0aa;
   --lightslate: #8e8f99;
   --dairy: #fcfcfc;
+  --navyblue-modal: #2E2F4266;
 }
 
 p,
@@ -434,7 +435,7 @@ body {
 
   color: var(--lightslate);
 
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -538,8 +539,7 @@ body {
 
   text-align: center;
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button.filter:hover,
@@ -660,7 +660,7 @@ body {
   border-radius: 15px;
   cursor: pointer;
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-icon {
@@ -678,3 +678,240 @@ body {
   opacity: 0;
   pointer-events: none;
 }
+
+/* HW-06 start */
+
+.footer-subscribe {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-left: 120px;
+}
+
+.footer-heading {
+  color: white;
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+}
+
+.footer-form-input {
+  width: 264px;
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+  color: white;
+  background-color: transparent;
+  outline: none;
+  justify-content: right;
+  padding: 8px;
+
+  border-radius: 4px;
+  border: 1px solid white;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-form-input::placeholder {
+  color: white;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+}
+
+.footer-form .button.primary {
+  height: 40px;
+  padding: 8px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border-color: transparent;
+  color: var(--cloud);
+  background-color: var(--iris);
+  border-radius: 4px;
+  text-align: center;
+  font-size: 16px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-form .button.primary:hover {
+  background-color: var(--ocean);
+}
+
+.footer-form .button.primary > .icon {
+  fill: currentColor;
+}
+
+
+/* Modal HW-6 */
+
+.modal-title {
+  margin-top: 50px;
+  color: var(--navyblue);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+}
+
+.modal-form {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field {
+  position: relative;
+  display: block;
+
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.form-label {
+  position: absolute;
+  top: -14px;
+
+  color: var(--lightslate);
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  margin-top: 8px;
+  margin-bottom: 8px;
+
+  padding-top: 11px;
+  padding-right: 16px;
+  padding-bottom: 11px;
+  padding-left: 40px;
+
+  border-radius: 4px;
+  border: 1px solid var(--navyblue-modal, rgba(46, 47, 66, 0.40));
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-textarea {
+  padding-left: 16px;
+  resize: none;
+}
+
+.form-textarea::placeholder {
+  color: var(--navyblue-modal);
+  padding-top: 4px;
+  font-size: 12px;
+}
+
+.footer-form-input:hover,
+.footer-form-input:focus,
+.form-input:hover,
+.form-input:focus,
+.form-textarea:hover,
+.form-textarea:focus {
+  border-color: var(--iris);
+  outline: none;
+}
+
+.form-agreement {
+  margin-bottom: 10px;
+
+  display: flex;
+  align-items: center;
+  color: var(--lightslate);
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+.form-agreement .form-checkmark {
+  appearance: none;
+}
+
+.form-agreement .icon {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  margin-right: 8px;
+
+  border: 2px solid var(--lightslate);
+  border-radius: 2px;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.form-agreement .form-checkmark:checked + .icon {
+  background-color: var(--ocean);
+  border-color: var(--ocean);
+  fill: white;
+  outline: none;
+}
+
+.form-privacy {
+  color: var(--iris);
+}
+
+.button-center {
+  display: block;
+  justify-content: center;
+  margin: 0 auto;
+
+  width: 140px;
+  padding: 16px 32px;
+
+  border-color: transparent;
+  color: white;
+  background-color: var(--iris);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  border-radius: 4px;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-center:hover {
+  background-color: var(--ocean);
+}
+
+
+
+/* for svg i think this is it */
+/* .nav-menu .page:hover,
+.nav-menu .page:focus,
+.nav-menu .page.current,
+.contacts-menu .contact:hover,
+.contacts-menu .contact:focus {
+  color: var(--iris);
+}
+
+.nav-menu .page.current {
+  position: relative;
+  align-items: center;
+}
+
+.nav-menu .page.current::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--ocean); */
