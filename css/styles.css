@@ -679,30 +679,35 @@ body {
   pointer-events: none;
 }
 
+
 /* HW-06 start */
 
-.footer-subscribe {
+.footer-form-subscribe {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
-  margin-left: 120px;
+  gap: 16px;
+  margin-left: auto;
 }
 
-.footer-heading {
+.footer-form-heading {
   color: white;
   font-size: 16px;
-  line-height: 2;
   letter-spacing: 0.06em;
 }
 
+.footer-form {
+  display: flex;
+  gap: 24px;
+}
+
 .footer-form-input {
-  width: 264px;
+  width: 255px;
   height: 40px;
-  margin-top: 10px;
   margin-bottom: 14px;
   display: flex;
   justify-content: center;
   align-content: center;
+  align-items: center;
 
   color: white;
   background-color: transparent;
@@ -710,6 +715,7 @@ body {
   justify-content: right;
   padding: 8px;
 
+  font-size: 12px;
   border-radius: 4px;
   border: 1px solid white;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
@@ -717,20 +723,26 @@ body {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.footer-form-input:hover, 
+.footer-form-input:focus {
+  outline: none;
+  border: 1px solid var(--iris);
+}
+
 .footer-form-input::placeholder {
   color: white;
   font-size: 12px;
   line-height: 2;
   letter-spacing: 0.06em;
+  padding: 2px 2px;
 }
 
-.footer-form .button.primary {
+.subscribe-button {
+  display: flex;
+  align-items: center;
   height: 40px;
   padding: 8px 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+  gap: 16px;
 
   border-color: transparent;
   color: var(--cloud);
@@ -738,17 +750,22 @@ body {
   border-radius: 4px;
   text-align: center;
   font-size: 16px;
+  font-weight: 500px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.footer-form .button.primary:hover {
+.subscribe-button:hover,
+.subscribe-button:focus {
   background-color: var(--ocean);
 }
 
-.footer-form .button.primary > .icon {
-  fill: currentColor;
+.subscribe-button > .icon {
+  fill: white;
 }
 
 
@@ -759,9 +776,10 @@ body {
   color: var(--navyblue);
   text-align: center;
   font-size: 16px;
-  font-weight: 700px;
-  line-height: 2;
+  font-weight: 500px;
+  line-height: 1.5;
   letter-spacing: 0.06em;
+  text-align: center;
 }
 
 .modal-form {
@@ -781,7 +799,7 @@ body {
 
 .form-label {
   position: absolute;
-  top: -14px;
+  top: -16px;
 
   color: var(--lightslate);
   font-size: 12px;
@@ -791,17 +809,17 @@ body {
 
 .form-input,
 .form-textarea {
+  display: block;
+
   width: 100%;
   margin-top: 8px;
-  margin-bottom: 8px;
-
-  padding-top: 11px;
-  padding-right: 16px;
-  padding-bottom: 11px;
-  padding-left: 40px;
-
+  margin-bottom: 18px;
+  padding: 11px 16px 11px 40px;
+  border: 1px solid var(--navyblue-modal);
   border-radius: 4px;
-  border: 1px solid var(--navyblue-modal, rgba(46, 47, 66, 0.40));
+
+  line-height: 0.87;
+  letter-spacing: 0.01em;
 
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -827,10 +845,36 @@ body {
   outline: none;
 }
 
+.form-field > .icon {
+  position: absolute;
+  left: 12px;
+  top: 40%;
+  transform: translateY(-40%);
+  fill: var(--navyblue);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-input.current, 
+.form-input.current + .icon {
+  border-color: var(--iris);
+  fill: var(--iris);
+}
+
+.form-input:hover + .icon,
+.form-input:focus + .icon {
+  fill: var(--iris);
+}
+
+/* Checkbox */
 .form-agreement {
+  margin-top: 8px;
   margin-bottom: 10px;
+  position: relative;
+  cursor: pointer;
 
   display: flex;
+  justify-content: center;
   align-items: center;
   color: var(--lightslate);
   font-size: 12px;
@@ -839,29 +883,27 @@ body {
   text-align: center;
 }
 
-.form-agreement .form-checkmark {
-  appearance: none;
+.form-checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  background-color: #eee;
 }
 
-.form-agreement .icon {
-  width: 16px;
-  height: 16px;
+.icon-checkbox {
   fill: none;
-  margin-right: 8px;
-
   border: 2px solid var(--lightslate);
   border-radius: 2px;
+  margin-right: 7px;
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-  border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-
-.form-agreement .form-checkmark:checked + .icon {
+.form-checkbox:checked + .icon-checkbox {
   background-color: var(--ocean);
   border-color: var(--ocean);
   fill: white;
-  outline: none;
+  border: none;
 }
 
 .form-privacy {
@@ -890,28 +932,44 @@ body {
   background-color: var(--ocean);
 }
 
-
-
-/* for svg i think this is it */
-/* .nav-menu .page:hover,
-.nav-menu .page:focus,
-.nav-menu .page.current,
-.contacts-menu .contact:hover,
-.contacts-menu .contact:focus {
-  color: var(--iris);
-}
-
-.nav-menu .page.current {
-  position: relative;
-  align-items: center;
-}
-
-.nav-menu .page.current::after {
-  content: "";
+/* .icon-checkbox::after {
+  content:"";
   position: absolute;
-  left: 0;
-  bottom: -1px;
-  width: 100%;
-  height: 4px;
+  display: none;
+}
+
+.form-checkbox:checked + .icon-checkbox:after {
+  display: block;
+} */
+
+/* .form-agreement > .icon {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  margin-right: 8px;
+
+  border: 2px solid var(--lightslate);
   border-radius: 2px;
-  background-color: var(--ocean); */
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+} */
+
+/* 
+.form-agreement .form-checkmark {
+  appearance: none;
+} */
+
+/* .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+} */
+
