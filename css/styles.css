@@ -624,12 +624,16 @@ body {
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* added padding as per Mentor Radh */
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
   min-width: 408px;
-  min-height: 584px;
+  /* min-height: 584px; */
+
+  padding: 72px 24px 24px 24px;
+
   background-color: var(--dairy);
   border-radius: 4px;
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
@@ -643,16 +647,17 @@ body {
   transform: translate(-50%, -50%) scale(0);
 }
 
+/* as per Mentor Radh */
 .modal-close {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 24px;
+  right: 24px;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
 
   background-color: var(--cornflower);
   color: var(--navyblue);
@@ -771,19 +776,22 @@ body {
 
 /* Modal HW-6 */
 
+/* remove margin top as per Mentor Radh */
 .modal-title {
-  margin-top: 50px;
+  /* margin-top: 50px; */
+  margin-bottom: 34px;
   color: var(--navyblue);
-  text-align: center;
+  /* text-align: center; */
   font-size: 16px;
-  font-weight: 500px;
+  font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.06em;
   text-align: center;
 }
 
+/* removed as per Mentor Radh */
 .modal-form {
-  padding: 24px;
+  /* padding: 24px; */
   display: flex;
   flex-direction: column;
 }
@@ -803,29 +811,33 @@ body {
 
   color: var(--lightslate);
   font-size: 12px;
-  line-height: 2;
+  line-height: 14px;
   letter-spacing: 0.06em;
 }
 
+/* as per Mentor Radh */
 .form-input,
 .form-textarea {
   display: block;
 
   width: 100%;
-  margin-top: 8px;
-  margin-bottom: 18px;
+  /* margin-top: 8px; */
+  margin-bottom: 26px;
   padding: 11px 16px 11px 40px;
   border: 1px solid var(--navyblue-modal);
   border-radius: 4px;
 
+  font-size: 12px;
   line-height: 0.87;
   letter-spacing: 0.01em;
 
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* as per Mentor Radh */
 .form-textarea {
   padding-left: 16px;
+  margin-bottom: 16px;
   resize: none;
 }
 
@@ -848,8 +860,8 @@ body {
 .form-field > .icon {
   position: absolute;
   left: 12px;
-  top: 40%;
-  transform: translateY(-40%);
+  top: 20%;
+  transform: translateY(-20%);
   fill: var(--navyblue);
 
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -867,13 +879,14 @@ body {
 }
 
 /* Checkbox */
+/* as per Mentor Radh */
 .form-agreement {
-  margin-top: 8px;
+  /* margin-top: 8px; */
   margin-bottom: 24px;
   position: relative;
 
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 
   color: var(--lightslate);
@@ -914,13 +927,17 @@ body {
 .modal-send {
   display: block;
   margin: auto;
-  margin-bottom: 24px;
+  /* margin-bottom: 24px; */
+  padding: 16px 32px;
 
   width: 170px;
 
   border-color: transparent;
   color: white;
   background-color: var(--iris);
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.06em;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
   text-align: center;
   border-radius: 4px;
