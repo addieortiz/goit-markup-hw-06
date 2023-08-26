@@ -204,7 +204,7 @@ body {
 
   color: white;
   background-color: var(--iris);
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.87;
   letter-spacing: 0.06em;
 
@@ -511,11 +511,11 @@ body {
 }
 
 .social-footer.list {
-  padding-top: 10px;
+  padding-top: 16px;
 
   display: flex;
   justify-content: flex-start;
-  gap: 10px;
+  gap: 16px;
 }
 
 .filters {
@@ -629,8 +629,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  min-width: 408px;
-  /* min-height: 584px; */
+  width: 408px;
 
   padding: 72px 24px 24px 24px;
 
@@ -755,9 +754,10 @@ body {
   border-radius: 4px;
   text-align: center;
   font-size: 16px;
-  font-weight: 500px;
+  font-weight: 500;
   line-height: 1.87;
   letter-spacing: 0.06em;
+  cursor: pointer;
 
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 
@@ -778,14 +778,11 @@ body {
 
 /* remove margin top as per Mentor Radh */
 .modal-title {
-  /* margin-top: 50px; */
   margin-bottom: 34px;
   color: var(--navyblue);
-  /* text-align: center; */
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
-  letter-spacing: 0.06em;
   text-align: center;
 }
 
@@ -927,7 +924,6 @@ body {
 .modal-send {
   display: block;
   margin: auto;
-  /* margin-bottom: 24px; */
   padding: 16px 32px;
 
   width: 170px;
@@ -942,6 +938,7 @@ body {
   text-align: center;
   border-radius: 4px;
   font-weight: 500px;
+  cursor: pointer;
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
